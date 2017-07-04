@@ -1,0 +1,36 @@
+body {
+	margin-top: 51px;
+	background-color: #d9dce0;
+}
+
+#id--the-pad-holder {
+	height: 580px;
+	margin: 100px auto;
+	overflow: hidden;
+	width: 675px;
+}
+
+.html--div-pad-row {
+	display: inline-block;
+}
+
+.html--div-block {
+	height: 50px;
+	width: 50px;
+	background: green;
+	border: 1px solid transparent;
+}
+
+.html--float-left {
+	float: left;
+}
+
+.div--center-in-div {
+	margin: 0 auto;
+	width: 50%;
+}
+
+#id--the-pad {
+	width: 90%;
+	border:5px solid black;
+}
