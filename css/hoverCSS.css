@@ -19,6 +19,7 @@ body {
 	width: 50px;
 	background: green;
 	border: 1px solid transparent;
+	border-radius: 0%;
 }
 
 .html--float-left {
@@ -33,4 +34,13 @@ body {
 #id--the-pad {
 	width: 90%;
 	border:5px solid black;
+	border-radius: 5px;
+}
+
+.html--display-none {
+	display: none;
+}
+
+.html--display-inline-block {
+	display: inline-block;
 }
