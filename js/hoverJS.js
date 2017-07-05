@@ -2,6 +2,8 @@ var padHeightWidth = 64;
 var padHolderHeight;
 var borderShape = 1; // 1 -> square || 0 -> circle
 var borderVisible = 0; // 1 -> border is visible || 0 -> border is invisible
+var colorArray = ['red', 'blue', 'yellow', 'violet', 'gray', 'green'];
+var randColor = colorArray[Math.ceil(Math.random() * 5)];
 
 $(document).ready(function() {
 	changePadHeightWidth();
@@ -36,6 +38,21 @@ $(document).ready(function() {
 			$('.html--div-block').css('border-radius', '0%');
 			borderShape = 1;
 		}
+	});
+	
+	/* Setting a random color for each time the site is loaded */
+	// Setting the color on the navbar
+	removeClassesStartingWith($('#id--chosen-color-display'));
+	$('#id--chosen-color-display').addClass('html--color-' + randColor);
+
+	// Setting the chosen color tick on the chosen color
+	$('.html--display-inline-block-color-chosen').removeClass('html--display-inline-block-color-chosen').addClass('html--display-none-color-chosen');
+	$('#id--color-chosen-representator li .html--color-' + randColor + ' + .glyphicon-ok').addClass('html--display-inline-block-color-chosen');
+
+
+	// Enabling hover effect over html--div-block
+	$('.html--div-block').hover(function() {
+		$(this).css('background', 'red');
 	});
 });
 
@@ -78,4 +95,12 @@ var changePadHeightWidth = function() {
 
 	// Checking if border is visible
 	if (borderVisible == 1) $('#id--glyph-ok-border').trigger('click');
+};
+
+var removeClassesStartingWith = function (element) {
+	if (element == undefined) return;
+
+	element.attr('class', function (index, oneClass) {
+		oneClass.replace(/(^|\s)html--color-\S+/g, '');
+	});
 };

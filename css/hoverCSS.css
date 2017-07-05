@@ -20,6 +20,7 @@ body {
 	background: green;
 	border: 1px solid transparent;
 	border-radius: 0%;
+	transition: all 0.3s;
 }
 
 .html--float-left {
@@ -37,10 +38,38 @@ body {
 	border-radius: 5px;
 }
 
-.html--display-none {
+.html--display-none, .html--display-none-color-chosen {
 	display: none;
 }
 
-.html--display-inline-block {
+.html--display-inline-block, .html--display-inline-block-color-chosen {
 	display: inline-block;
+}
+
+.html--color-green {
+	color: #a3ff66;
+}
+
+.html--color-violet {
+	color: #7759ff;
+}
+
+.html--color-yellow {
+	color: #f1ff59;
+}
+
+.html--color-red {
+	color: #fc6041;
+}
+
+.html--color-blue {
+	color: #639fff;
+}
+
+.html--color-gray {
+	color: #b9bbbf;
+}
+
+.html--background-color-green {
+	background: #a3ff66;
 }
