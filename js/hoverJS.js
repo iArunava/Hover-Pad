@@ -1,4 +1,4 @@
-var padHeightWidth = 64;
+var padHeightWidth = 25;
 var padHolderHeight;
 var borderShape = 1; // 1 -> square || 0 -> circle
 var borderVisible = 0; // 1 -> border is visible || 0 -> border is invisible
