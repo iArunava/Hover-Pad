@@ -17,7 +17,7 @@ body {
 .html--div-block {
 	height: 50px;
 	width: 50px;
-	background: green;
+	background: white;
 	border: 1px solid transparent;
 	border-radius: 0%;
 	transition: all 0.3s;
@@ -68,8 +68,4 @@ body {
 
 .html--color-gray {
 	color: #b9bbbf;
-}
-
-.html--background-color-green {
-	background: #a3ff66;
 }

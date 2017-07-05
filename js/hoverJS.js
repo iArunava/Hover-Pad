@@ -3,6 +3,7 @@ var padHolderHeight;
 var borderShape = 1; // 1 -> square || 0 -> circle
 var borderVisible = 0; // 1 -> border is visible || 0 -> border is invisible
 var colorArray = ['red', 'blue', 'yellow', 'violet', 'gray', 'green'];
+var colorDic = {'red' : '#fc6041', 'yellow' : '#f1ff59', 'blue' : '#639fff', 'gray' : '#b9bbbf', 'green' : '#a3ff66', 'violet' : '#7759ff'};
 var randColor = colorArray[Math.ceil(Math.random() * 5)];
 
 $(document).ready(function() {
@@ -18,7 +19,7 @@ $(document).ready(function() {
 		
 		if ($('#id--glyph-ok-border .glyphicon-ok').hasClass('html--display-none')) {
 			$('#id--glyph-ok-border .glyphicon-ok').removeClass('html--display-none').addClass('html--display-inline-block');
-			$('.html--div-block').css('border', '1.0px solid black');
+			$('.html--div-block').css('border', '1.0px solid #a7adb7');
 			borderVisible = 1;
 		} else {
 			$('#id--glyph-ok-border .glyphicon-ok').removeClass('html--display-inline-block').addClass('html--display-none');
@@ -50,10 +51,6 @@ $(document).ready(function() {
 	$('#id--color-chosen-representator li .html--color-' + randColor + ' + .glyphicon-ok').addClass('html--display-inline-block-color-chosen');
 
 
-	// Enabling hover effect over html--div-block
-	$('.html--div-block').hover(function() {
-		$(this).css('background', 'red');
-	});
 });
 
 var changePadHeightWidth = function() {
@@ -95,6 +92,11 @@ var changePadHeightWidth = function() {
 
 	// Checking if border is visible
 	if (borderVisible == 1) $('#id--glyph-ok-border').trigger('click');
+
+	// Enabling hover effect over html--div-block
+	$('.html--div-block').hover(function() {
+		$(this).css('background', colorDic[randColor]);
+	});
 };
 
 var removeClassesStartingWith = function (element) {
