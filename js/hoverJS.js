@@ -41,6 +41,7 @@ $(document).ready(function() {
 		}
 	});
 	
+
 	/* Setting a random color for each time the site is loaded */
 	// Setting the color on the navbar
 	removeClassesStartingWith($('#id--chosen-color-display'));
@@ -50,6 +51,25 @@ $(document).ready(function() {
 	$('.html--display-inline-block-color-chosen').removeClass('html--display-inline-block-color-chosen').addClass('html--display-none-color-chosen');
 	$('#id--color-chosen-representator li .html--color-' + randColor + ' + .glyphicon-ok').addClass('html--display-inline-block-color-chosen');
 
+});
+
+$(document).ready(function() {
+	
+	// Enabling change of colors from navbar
+	$('#id--color-chosen-representator > ul li').on('click', function() {
+
+		// Assumes that html--color-* is the last class applied on the i rag
+		randColor = $(this).find('i').attr('class').split(' ').pop().split('-').pop(); 
+
+		/* Setting a random color for each time the site is loaded */
+		// Setting the color on the navbar
+		removeClassesStartingWith($('#id--chosen-color-display'));
+		$('#id--chosen-color-display').addClass('html--color-' + randColor);
+
+		// Setting the chosen color tick on the chosen color
+		$('.html--display-inline-block-color-chosen').removeClass('html--display-inline-block-color-chosen').addClass('html--display-none-color-chosen');
+		$('#id--color-chosen-representator li .html--color-' + randColor + ' + .glyphicon-ok').addClass('html--display-inline-block-color-chosen');
+	});
 
 });
 
@@ -97,12 +117,13 @@ var changePadHeightWidth = function() {
 	$('.html--div-block').hover(function() {
 		$(this).css('background', colorDic[randColor]);
 	});
+
 };
 
 var removeClassesStartingWith = function (element) {
 	if (element == undefined) return;
 
 	element.attr('class', function (index, oneClass) {
-		oneClass.replace(/(^|\s)html--color-\S+/g, '');
+		return oneClass.replace(/(^|\s)html--color-\S+/g, '');
 	});
 };
