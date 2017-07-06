@@ -6,6 +6,7 @@ var borderVisible = 0; // 1 -> border is visible || 0 -> border is invisible
 var colorArray = ['red', 'blue', 'yellow', 'violet', 'gray', 'green'];
 var colorDic = {'red' : '#fc6041', 'yellow' : '#f1ff59', 'blue' : '#639fff', 'gray' : '#b9bbbf', 'green' : '#a3ff66', 'violet' : '#7759ff'};
 var randColor = colorArray[Math.ceil(Math.random() * 5)];
+var colorHex = colorDic[randColor];
 
 $(document).ready(function() {
 	
@@ -146,7 +147,12 @@ var changePadHeightWidth = function() {
 
 	// Enabling hover effect over html--div-block
 	$('.html--div-block').hover(function() {
-		$(this).css('background', colorDic[randColor]);
+		if (randColor == 'rainbow') {
+			colorHex  = colorArray[Math.ceil(Math.random() * 5)];
+		} else {
+			colorHex = colorDic[randColor];
+		}
+		$(this).css('background', colorHex);
 	});
 
 };
