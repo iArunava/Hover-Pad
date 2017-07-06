@@ -1,5 +1,6 @@
 var padHeightWidth = 25;
 var padHolderHeight;
+var temp = -1;
 var borderShape = 1; // 1 -> square || 0 -> circle
 var borderVisible = 0; // 1 -> border is visible || 0 -> border is invisible
 var colorArray = ['red', 'blue', 'yellow', 'violet', 'gray', 'green'];
@@ -7,13 +8,43 @@ var colorDic = {'red' : '#fc6041', 'yellow' : '#f1ff59', 'blue' : '#639fff', 'gr
 var randColor = colorArray[Math.ceil(Math.random() * 5)];
 
 $(document).ready(function() {
+	
+	// Initial Work
 	changePadHeightWidth();
+	$('#id--the-grid-height-keeper').val(padHeightWidth);
 	
 	$("#id--the-grid-changer").on('click', function() {
 		
-		padHeightWidth = parseInt ($("#id--the-grid-height-keeper").val());
+		temp = parseInt ($("#id--the-grid-height-keeper").val());
+
+
+		padHeightWidth = temp;
+		
 		changePadHeightWidth();
+
+		$('#id--the-grid-height-keeper').val(padHeightWidth);
+
+		// Resetting temp
+		temp = -1;
 	});
+
+	$('#id--the-grid-height-keeper').change(function() {
+		
+		temp = parseInt ($(this).val());
+		$('#id--the-grid-changer').attr('disabled', false);
+		$(this).css({
+			'border-color': '#66afe9',
+			'box-shadow':   '0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6)'
+		});
+
+		if (!(1 <= temp && temp <= 65)) {
+		$(this).css({
+			'border-color': '#ff5f56',
+			'box-shadow': '0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 134, 127, 0.6)'
+		});
+			$('#id--the-grid-changer').attr('disabled', true);
+		}
+	}).change();
 
 	$("#id--glyph-ok-border").on('click', function() {
 		
