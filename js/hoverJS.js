@@ -148,7 +148,7 @@ var changePadHeightWidth = function() {
 	// Enabling hover effect over html--div-block
 	$('.html--div-block').hover(function() {
 		if (randColor == 'rainbow') {
-			colorHex  = colorArray[Math.ceil(Math.random() * 5)];
+			colorHex = colorDic[colorArray[Math.floor(Math.random() * colorArray.length)]];
 		} else {
 			colorHex = colorDic[randColor];
 		}
