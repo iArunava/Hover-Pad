@@ -1,7 +1,7 @@
 # Hover Pad
 
-Hover Pad is a website that features a square grid of variable length hovering over which changes the color of the square.<br/>
-The Color can be choosen from a range of colors available.
+Hover Pad is a web application that features a square grid of variable length (25x25 default) hovering over which changes the color of the square block which is being hovered on to a chosen color.<br/>
+The Color can be choosen from a range of colors available. The application features a special color called 'Rainbow', choosing which the squares are colored with a random color from the available colors.
 
 # Contributing
 
